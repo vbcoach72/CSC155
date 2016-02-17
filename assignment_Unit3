@@ -1,0 +1,28 @@
+//console.log("Hello World");
+
+process.argv.forEach(function (val, index, array){
+	console.log(index + ': ' + val);
+});
+
+
+var fs    = require('fs')
+  , path  = require('path');
+
+var mkdirSync = function (path) {
+  try {
+    fs.mkdirSync(path);
+  } catch(e) {
+    if ( e.code != 'EEXIST' ) throw e;
+  }
+}
+
+mkdirSync(path.join('processed') );
+
+
+var fs = require("fs");  
+var colors = require("colors");
+
+exports.readDir = function () {
+	var files = fs.readdirSync('D:\School SP16\CSC 155\');
+console.log(colors.yellow(files));
+}
